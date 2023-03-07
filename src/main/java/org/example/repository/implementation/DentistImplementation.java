@@ -1,8 +1,8 @@
 package org.example.repository.implementation;
 
-import org.apache.logging.log4j.core.Logger;
 import org.example.model.Dentist;
 import org.example.repository.DentistRepository;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.sql.*;
@@ -15,9 +15,7 @@ public class DentistImplementation implements DentistRepository<Dentist> {
     private final static String DB_URL = "jdbc:h2:~/db_Dentist;INIT=RUNSCRIPT FROM 'create.sql'";
     private final static String DB_USER ="sa";
     private final static String DB_PASSWORD = "";
-    private final Logger log = (Logger) LoggerFactory.getLogger(DentistImplementation.class);
-    
-
+    private final Logger log = LoggerFactory.getLogger(DentistImplementation.class);
 
 
 
