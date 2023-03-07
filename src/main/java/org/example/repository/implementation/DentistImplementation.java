@@ -1,7 +1,9 @@
 package org.example.repository.implementation;
 
+import org.apache.logging.log4j.core.Logger;
 import org.example.model.Dentist;
 import org.example.repository.DentistRepository;
+import org.slf4j.LoggerFactory;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -13,6 +15,10 @@ public class DentistImplementation implements DentistRepository<Dentist> {
     private final static String DB_URL = "jdbc:h2:~/db_Dentist;INIT=RUNSCRIPT FROM 'create.sql'";
     private final static String DB_USER ="sa";
     private final static String DB_PASSWORD = "";
+    private final Logger log = (Logger) LoggerFactory.getLogger(DentistImplementation.class);
+    
+
+
 
 
 
@@ -46,6 +52,8 @@ public class DentistImplementation implements DentistRepository<Dentist> {
 
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
+            log.warn("Dentist License does not exist!");
+
         }
         return dentist;
 
@@ -84,6 +92,8 @@ public class DentistImplementation implements DentistRepository<Dentist> {
             preparedStatement.close();
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
+            log.warn("Dentist License does not exist!");
+
         }
 
         return dentist;
@@ -120,6 +130,8 @@ public class DentistImplementation implements DentistRepository<Dentist> {
             preparedStatement.close();
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
+            log.warn("Dentist License does not exist!");
+
         }
 
         return dentist;
@@ -161,6 +173,8 @@ public class DentistImplementation implements DentistRepository<Dentist> {
             preparedStatement.close();
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
+            log.warn("Dentist License does not exist!");
+
         }
     }
 }
