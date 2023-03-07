@@ -12,7 +12,7 @@ public class DentistServiceTest {
     private static final DentistService dentistService = new DentistService(new DentistImplementation());
 
     @BeforeClass
-    public static void cargarDataSet() {
+    public static void loadingData() {
         Dentist dentist = dentistService.save(new Dentist(123L, "Cosme", "Fulanito"));
         Dentist dentist1 = dentistService.save(new Dentist(3456L, "John", "Connor"));
 
