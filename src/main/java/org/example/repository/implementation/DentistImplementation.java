@@ -7,7 +7,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DentistImplementation implements DentistRepository {
+public class DentistImplementation implements DentistRepository<Dentist> {
 
     private final static String DB_JDBC_DRIVER = "org.h2.Driver";
     private final static String DB_URL = "jdbc:h2:~/db_Dentist;INIT=RUNSCRIPT FROM 'create.sql'";

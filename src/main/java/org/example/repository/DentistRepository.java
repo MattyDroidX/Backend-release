@@ -6,8 +6,7 @@ import java.util.List;
 
 public interface DentistRepository<T> {
 
-    Dentist save(Dentist dentist);
-
+    T save(T t);
     List<T>findAll();
     T findById(int id);
     void deleteById(int id);
